@@ -1,0 +1,16 @@
+{
+  "name": "guessing-app",
+  "version": "1.0.0",
+  "description": "try to guess the number between 1 and 10000",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Valeriia Zabkowska",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4"
+  }
+}
