@@ -20,21 +20,25 @@ app.get('/', (req, res) => {
     });
 });
 
+// Status codes
+const SUCCESS = 0;
+const GREATER = 1;
+const LOWER = -1;
+
 class GuessResult {
-    constructor(success, message){
-        this.success = success;
-        this.message = message;
+    constructor(status_code){
+        this.status_code = status_code;
     }
 };
 
 function checkGuessed (guessed_number, random_number){
     if (guessed_number > random_number) {
-        return new GuessResult(false, "The number is smaller. Try again!");
+        return new GuessResult(LOWER);
     }
     if (guessed_number < random_number) {
-        return new GuessResult(false, "The number is bigger. Try again!");
+        return new GuessResult(GREATER);
     }
-    return new GuessResult(true, "Congratulations! You guessed the number!");
+    return new GuessResult(SUCCESS);
 };
 
 app.post('/guess', (req, res) => {
